@@ -1,0 +1,41 @@
+.badan{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.produk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    border: 1px solid rgba(133, 133, 133, 0.546);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.30);
+    margin: 10px;
+}
+
+.harga{
+    background-color: rgb(203, 255, 203);
+    padding: 5px;
+    border-radius: 10px;
+    color: rgb(0, 45, 18);
+}
+
+.add{
+    width: 100px;
+    background-color:  rgb(32, 32, 32);
+    color:  rgb(255, 255, 255);
+    border: 1px solid  rgb(32, 32, 32);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.check{
+    width: 100px;
+    background-color:  rgb(255, 254, 254);
+    color:  rgb(32, 32, 32);
+    border: 1px solid  rgb(32, 32, 32);
+    border-radius: 10px;
+}

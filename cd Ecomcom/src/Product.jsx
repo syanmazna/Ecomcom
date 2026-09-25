@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from './Product.module.css'
 
 function Product(){
     const [product, setProduk]= useState([])
@@ -16,16 +17,18 @@ function Product(){
     return(
         <>
             <div>
-                <h2><strong>Produk Kami</strong></h2>
-                {isLoading? (<div><br /><span>Tunggu Sebentar</span></div>): (
-                    <div>
+                <h2><strong>Our Product</strong></h2>
+                {isLoading? (<div><br /><span>Holon</span></div>): (
+                    <div className={styles.badan}>
                     {product.map(item =>
-                        <div key={item.id}>
+                        <div key={item.id} className={styles.produk} style={{ textAlign: "center"}}>
                             <h4><strong>{item.title}</strong></h4>
                             <img src={item.image} alt={item.title} style={{width: "120px"}} />
-                            <p>Harga: ${item.price}</p>
-                            <p>Kategori: {item.category}</p>
-                            <p>Deskripsi: {item.description}</p>
+                            <p className={styles.harga}>${item.price}</p>
+                            <p>Category: {item.category}</p>
+                            <p style={{textAlign: "justify"}}>Description: {item.description}</p>
+                            <button className={styles.add}>+ Add Cart</button>
+                            <button className={styles.check}>Checkout</button>
                             <br />
                         </div>
                     )}
