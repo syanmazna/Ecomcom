@@ -37,7 +37,7 @@ function Product() {
                             </div>
 
                             {/* Kotak Info Barang*/}
-                            <div className="p-2 md:p-3 flex flex-col flex-grow text-left">
+                            <div className="p-2 md:p-3 flex flex-col grow text-left">
                     
                                 {/* Area Tombol*/}
                                 <div className="mt-auto flex flex-col gap-1.5">
