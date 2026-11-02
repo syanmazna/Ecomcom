@@ -13,8 +13,12 @@ function Product() {
             });
     }, []);
 
+    const belum = (fitur) => {
+        alert("Belum jadi hehe");
+    };
+
     return (
-        <div className="p-2 md:p-4 bg-gray-50 min-h-screen">
+        <div className="max-w-6xl mx-auto h-30 px-6 p-2 md:p-4 bg-gray-50 min-h-screen">
             <h2 className="text-xl md:text-2xl font-bold mb-4 ml-2">Our Product</h2>
             
             {isLoading ? (
@@ -47,10 +51,10 @@ function Product() {
                                      <p className="font-bold text-[13px] md:text-[15px] text-[#fa591d] mb-2">
                                     ${item.price}
                                 </p>
-                                    <button className="w-full bg-[#212121] text-white text-[11px] md:text-[12px] py-1.5 md:py-2 rounded-md hover:bg-gray-800 transition-colors font-medium active:bg-mist-600">
+                                    <button onClick={() => belum("Keranjang")} className="w-full bg-[#212121] text-white text-[11px] md:text-[12px] py-1.5 md:py-2 rounded-md hover:bg-gray-800 transition-colors font-medium active:bg-mist-600">
                                         + Add Cart
                                     </button>
-                                    <button className="w-full bg-white text-[#212121] border border-[#212121] text-[11px] md:text-[12px] py-1.5 md:py-2 rounded-md hover:bg-gray-500 active:bg-green-200 transition-colors font-medium">
+                                    <button onClick={() => belum("Checkout")} className="w-full bg-white text-[#212121] border border-[#212121] text-[11px] md:text-[12px] py-1.5 md:py-2 rounded-md hover:bg-gray-500 active:bg-green-200 transition-colors font-medium">
                                         Checkout
                                     </button>
                                 </div>
