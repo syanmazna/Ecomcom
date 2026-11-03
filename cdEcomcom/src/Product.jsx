@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-function Product() {
-    const [product, setProduk] = useState([]);
+function Product({ searchTerm }) {
+    const [product, setProduct] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(respon => respon.json())
             .then(data => {
-                setProduk(data);
+                setProduct(data);
                 setIsLoading(false);
             });
     }, []);
@@ -16,6 +16,10 @@ function Product() {
     const belum = (fitur) => {
         alert("Belum jadi hehe");
     };
+
+    const filteredProducts = product.filter((item) => {
+       return item.title.toLowerCase().includes(searchTerm?.toLowerCase() || "");
+    });
 
     return (
         <div className="max-w-6xl mx-auto h-30 px-6 p-2 md:p-4 bg-gray-50 min-h-screen">
@@ -26,7 +30,7 @@ function Product() {
             ) : (
                 /* Gap (jarak antar kotak) diperkecil di HP (gap-2), agak lebar di PC (md:gap-4) */
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4 p-1 md:p-2">
-                    {product.map(item => (
+                    {filteredProducts.map(item => (
                         <div 
                             key={item.id} 
                             className="flex flex-col bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
